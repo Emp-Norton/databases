@@ -39,7 +39,7 @@ var app = {
   send: function(message) {
     var room = $('#newRoomInput').val();
     $.ajax({
-      url: 'http://127.0.0.1:3000/classes/' + room,
+      url: 'http://127.0.0.1:3000/classes/messages' + room,
       type: 'POST',
       data: message,
       success: function (data) {
@@ -105,9 +105,10 @@ var app = {
 
   getRecent: function() {
     var room = $('#newRoomInput').val();
+    var user = $('#userInput').val();
     app.clearMessages();
     $.ajax({
-      url: 'http://127.0.0.1:3000/classes/' + room, // 
+      url: 'http://127.0.0.1:3000/classes/messages/' + room, // 
       type: 'GET',
       success: function (response) {
         console.log('request sent, returned: ', response);

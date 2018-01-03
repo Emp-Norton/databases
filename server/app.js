@@ -17,6 +17,12 @@ app.set('port', 3000);
 // Logging and parsing
 app.use(morgan('dev'));
 app.use(parser.json());
+db.connection.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
+
+
 
 // Set up our routes
 app.use('/classes', router);

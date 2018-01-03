@@ -1,0 +1,3 @@
+- when is schema.sql run? 
+	- only to initialize / create database? (which drop tables command therein implies).
+- how does it interact with the command line ?
